@@ -17,6 +17,49 @@ blockchain = [
   { "from_user" => "anthony", "to_user" => "evan", "amount" => 1750 }
 ]
 
+#create 4 variables for each user's balance and set to 0
+bens_balance = 0
+brians_balance=0
+evans_balance=0
+anthonys_balance=0
+
+for transaction in blockchain
+#subtract if from user
+if transaction["from_user"] =="ben"
+  bens_balance = bens_balance - transaction["amount"]
+elsif transaction["from_user"] =="brian"
+  brians_balance = brians_balance - transaction["amount"]
+elsif transaction ["from_user"] =="evan"
+  evans_balance=evans_balance- transaction["amount"]
+elsif transaction ["from_user"] =="anthony"
+  anthonys_balance=anthonys_balance-transaction["amount"]
+end
+
+#add if to user
+if transaction["to_user"] =="ben"
+  bens_balance = bens_balance + transaction["amount"]
+elsif transaction["to_user"] =="brian"
+  brians_balance = brians_balance + transaction["amount"]
+elsif transaction ["to_user"] =="evan"
+  evans_balance=evans_balance+ transaction["amount"]
+elsif transaction ["to_user"] =="anthony"
+  anthonys_balance=anthonys_balance+transaction["amount"]
+end
+end
+
+users = ["Ben", "Brian", "Evan", "Anthony"]
+balances = [bens_balance,brians_balance, evans_balance, anthonys_balance]
+
+
+
+for user in users
+  for balance in balances
+ puts "#{user}'s KelloggCoin balance is #{balance}"
+end
+end
+
+
+
 # Write code below that returns the number of KelloggCoin that each user has in their 
 # KelloggCoin "wallet".
 
