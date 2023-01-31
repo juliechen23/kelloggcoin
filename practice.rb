@@ -17,6 +17,19 @@ blockchain = [
   { "from_user" => "anthony", "to_user" => "evan", "amount" => 1750 }
 ]
 
+
+
+
+# Write code below that returns the number of KelloggCoin that each user has in their 
+# KelloggCoin "wallet".
+
+# It should print out:
+# Ben's KelloggCoin balance is 14000
+# Brian's KelloggCoin balance is 13000
+# Evan's KelloggCoin balance is 10350
+# Anthony's KelloggCoin balance is 2650
+
+# 👇👇👇 Your code HERE 👇👇👇
 #create 4 variables for each user's balance and set to 0
 bens_balance = 0
 brians_balance=0
@@ -47,26 +60,15 @@ elsif transaction ["to_user"] =="anthony"
 end
 end
 
-users = ["Ben", "Brian", "Evan", "Anthony"]
-balances = [bens_balance,brians_balance, evans_balance, anthonys_balance]
+puts "Ben's KelloggCoin balance is #{bens_balance}"
+puts "Brian's KelloggCoin balance is #{brians_balance}"
+puts "Evan's KelloggCoin balance is #{evans_balance}"
+puts "Anthony's KelloggCoin balance is #{anthonys_balance}"
 
-
-
-for user in users
-  for balance in balances
- puts "#{user}'s KelloggCoin balance is #{balance}"
-end
-end
-
-
-
-# Write code below that returns the number of KelloggCoin that each user has in their 
-# KelloggCoin "wallet".
-
-# It should print out:
-# Ben's KelloggCoin balance is 14000
-# Brian's KelloggCoin balance is 13000
-# Evan's KelloggCoin balance is 10350
-# Anthony's KelloggCoin balance is 2650
-
-# 👇👇👇 Your code HERE 👇👇👇
+# users = ["Ben", "Brian", "Evan", "Anthony"]
+# balances = [bens_balance,brians_balance, evans_balance, anthonys_balance]
+# for user in users
+#   for balance in balances
+#  puts "#{user}'s KelloggCoin balance is #{balance}"
+# end
+# end
