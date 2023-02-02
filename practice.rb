@@ -30,45 +30,60 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
-#create 4 variables for each user's balance and set to 0
-bens_balance = 0
-brians_balance=0
-evans_balance=0
-anthonys_balance=0
+# #create 4 variables for each user's balance and set to 0
+# bens_balance = 0
+# brians_balance=0
+# evans_balance=0
+# anthonys_balance=0
 
+# for transaction in blockchain
+# #subtract if from user
+# if transaction["from_user"] =="ben"
+#   bens_balance = bens_balance - transaction["amount"]
+# elsif transaction["from_user"] =="brian"
+#   brians_balance = brians_balance - transaction["amount"]
+# elsif transaction ["from_user"] =="evan"
+#   evans_balance=evans_balance- transaction["amount"]
+# elsif transaction ["from_user"] =="anthony"
+#   anthonys_balance=anthonys_balance-transaction["amount"]
+# end
+
+# #add if to user
+# if transaction["to_user"] =="ben"
+#   bens_balance = bens_balance + transaction["amount"]
+# elsif transaction["to_user"] =="brian"
+#   brians_balance = brians_balance + transaction["amount"]
+# elsif transaction ["to_user"] =="evan"
+#   evans_balance=evans_balance+ transaction["amount"]
+# elsif transaction ["to_user"] =="anthony"
+#   anthonys_balance=anthonys_balance+transaction["amount"]
+# end
+# end
+
+# puts "Ben's KelloggCoin balance is #{bens_balance}"
+# puts "Brian's KelloggCoin balance is #{brians_balance}"
+# puts "Evan's KelloggCoin balance is #{evans_balance}"
+# puts "Anthony's KelloggCoin balance is #{anthonys_balance}"
+
+users = [
+  {"name"=>"ben","amount"=>0},
+  {"name"=>"brian","amount"=>0},
+  {"name"=>"evan","amount"=>0},
+  {"name"=>"anthony","amount"=>0},
+]
+
+for user in users
 for transaction in blockchain
-#subtract if from user
-if transaction["from_user"] =="ben"
-  bens_balance = bens_balance - transaction["amount"]
-elsif transaction["from_user"] =="brian"
-  brians_balance = brians_balance - transaction["amount"]
-elsif transaction ["from_user"] =="evan"
-  evans_balance=evans_balance- transaction["amount"]
-elsif transaction ["from_user"] =="anthony"
-  anthonys_balance=anthonys_balance-transaction["amount"]
-end
+  if transaction["from_user"]==user["name"]
+    user["amount"] =user["amount"] - transaction["amount"]
+  end
 
-#add if to user
-if transaction["to_user"] =="ben"
-  bens_balance = bens_balance + transaction["amount"]
-elsif transaction["to_user"] =="brian"
-  brians_balance = brians_balance + transaction["amount"]
-elsif transaction ["to_user"] =="evan"
-  evans_balance=evans_balance+ transaction["amount"]
-elsif transaction ["to_user"] =="anthony"
-  anthonys_balance=anthonys_balance+transaction["amount"]
+  if transaction["to_user"]==user["name"]
+    user["amount"] =user["amount"] + transaction["amount"]
+  end
 end
 end
 
-puts "Ben's KelloggCoin balance is #{bens_balance}"
-puts "Brian's KelloggCoin balance is #{brians_balance}"
-puts "Evan's KelloggCoin balance is #{evans_balance}"
-puts "Anthony's KelloggCoin balance is #{anthonys_balance}"
-
-# users = ["Ben", "Brian", "Evan", "Anthony"]
-# balances = [bens_balance,brians_balance, evans_balance, anthonys_balance]
-# for user in users
-#   for balance in balances
-#  puts "#{user}'s KelloggCoin balance is #{balance}"
-# end
-# end
+for user_value in users
+  puts "#{user_value["name"]}'s KelloggCoin balance is #{user_value["amount"]}"
+end
